@@ -9,16 +9,41 @@ import UIKit
 
 class secView: UIViewController {
         
+    var names : [String] = ["chulwoo", "jaemin" , "doyoon"]  //<-model
+    //MVC view model controller
+    
+    
     
     @IBOutlet weak var tableView: UITableView!
     
-
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    
+    @IBAction func didTabButton(_ sender: UIButton) {
+        
+        names.append(nameTextField.text ?? "empty")//업데이트됬어
+        print(names)
+        tableView.reloadData()//업데이트됫으니까 화면에 보여줘봐
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var secImg: UIImageView!
     
     
     @IBAction func tooodooo(_ sender: UIButton) {
                 
     }
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -33,14 +58,13 @@ class secView: UIViewController {
 
 extension secView /*여기 파일이 secView 이고 class secView라서*/: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return names.count
+        
     }     //numberOfRowsInSection <---- 하나의 섹션에 몇개의 로우를 만들거야 ? 즉 태이블 뷰가 몇줄이 나오는지는 이 함수에서 정함
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myFirstCell", for: indexPath)//인덱스 패스
-        if indexPath.row == 1 {
-            cell.textLabel?.text = "111"
-        }
+        cell.textLabel?.text = names[indexPath.row]
         
        // indexPath.section // 인덱스 패스란몇번째 섹션에 몇번째 로우 라는 뜻을 갖음
       //  indexPath.row
