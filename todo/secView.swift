@@ -121,7 +121,7 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "myFirstCell", for: indexPath)//인덱스 패스
         cell.textLabel?.text = names[indexPath.row]
       
-        
+        //
        // indexPath.section // 인덱스 패스란몇번째 섹션에 몇번째 로우 라는 뜻을 갖음
       //  indexPath.row
         // 즉 바로 위 함수는 총섹션 곱하기 로우 만큼 호출 시킴 0번째 섹션에 0번째 로우 1=인덱스 0
