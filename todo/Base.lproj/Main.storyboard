@@ -128,9 +128,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.64406457115473459" green="1" blue="0.56953039167747055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="5lP-x1-7e0" kind="show" identifier="showSecViewSec" id="ROx-lc-sgY"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -170,19 +167,7 @@
                             <constraint firstItem="kM5-Ny-cMi" firstAttribute="trailing" secondItem="f7z-5w-QKf" secondAttribute="trailing" constant="10" id="wUU-9n-dl3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="- To Do List -" id="tci-Ts-JrX">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="XQW-eq-HKb">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pqn-oB-F5A">
-                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="alertButton:" destination="mdp-Ao-Ur0" eventType="touchUpInside" id="UKY-Ea-ixR"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="- To Do List -" id="tci-Ts-JrX"/>
                     <connections>
                         <outlet property="nameTextField" destination="PQc-Fs-mkU" id="Aec-4E-STN"/>
                         <outlet property="secImg" destination="G6d-Mz-k0w" id="oqZ-MI-Thu"/>
@@ -225,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYQ-ph-JhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921" y="195"/>
+            <point key="canvasLocation" x="2491" y="-44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O0b-qo-SpH">
@@ -244,34 +229,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9RX-gm-H2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-335.1145038167939" y="-44.366197183098592"/>
-        </scene>
-        <!--Detail-->
-        <scene sceneID="5E5-97-g01">
-            <objects>
-                <viewController id="5lP-x1-7e0" customClass="secViewSec" customModule="todo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Iox-21-qR5">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="asdsadf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzN-rs-qmz">
-                                <rect key="frame" x="158" y="396" width="77" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.64406457120000005" green="1" blue="0.56953039169999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="eAt-yJ-EQN"/>
-                        <color key="backgroundColor" red="1" green="0.66318583809999998" blue="0.89054381130000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Detail" style="editor" id="R4I-I9-Rjt"/>
-                    <connections>
-                        <outlet property="toDoSomething" destination="VzN-rs-qmz" id="7cd-nv-lCW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="36B-JW-EYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2552" y="-652"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
