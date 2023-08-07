@@ -27,6 +27,7 @@ class secView: UIViewController {
     
     ///텍스트필드에 작성후 버튼을 눌르면 테이블뷰 셀에 적용됨
     @IBAction func didTabButton(_ sender: UIButton) {
+        print(names)
         func showImageForAWhile() {
             // 데이터를 names 배열에 추가하고 delegate를 통해 데이터 전달
             if let data = nameTextField.text, !data.isEmpty {
@@ -115,6 +116,7 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
         } else {
             print(indexPath.row)
             tableView.deselectRow(at: indexPath, animated: true)
+            print(names)
         }
     }
     //    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -133,6 +135,7 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
             tableView.reloadData()
             self.saveNames()
             completionHandler(true) // 삭제기능
+            print(self.names)
         }
         deleteAction.backgroundColor = .red //배경색 넣어주기 스와이프 길이 조절해주려면 해야한다고함 이유는 솔직히 모름
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])// 약간 공식같은듯
@@ -197,7 +200,7 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
                 
                 // 전환할 뷰 컨트롤러에 데이터 전달
                 if let destinationVC = segue.destination as? doneSecView {
-                    destinationVC.doneName = selectedData
+                    destinationVC.doneName = names
                     names.remove(at: indexPath.row)
                     tableView.reloadData()
                     saveNames()
