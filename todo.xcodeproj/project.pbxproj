@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F2F30192A7C987900947DFF /* 123ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F30182A7C987900947DFF /* 123ViewController.swift */; };
+		1F74A5BE2A80A03B005E07EA /* angry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F74A5BD2A80A03B005E07EA /* angry.jpg */; };
+		1F74A5C02A80B92D005E07EA /* doneSecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74A5BF2A80B92D005E07EA /* doneSecView.swift */; };
 		1F7FFBF62A77BE0400863067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FFBF52A77BE0400863067 /* AppDelegate.swift */; };
 		1F7FFBF82A77BE0400863067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FFBF72A77BE0400863067 /* SceneDelegate.swift */; };
 		1F7FFBFA2A77BE0400863067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FFBF92A77BE0400863067 /* ViewController.swift */; };
@@ -22,8 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F2F30182A7C987900947DFF /* 123ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 123ViewController.swift; sourceTree = "<group>"; };
-		1F5BE0972A78F02E00EA5EC1 /* 2xsBZTJ8WjEpM62TNTV9r6PpS4Tixp946ZL0R5wXa6Oz_PddaUvyAX6qDkICeYKPhiY100UD3-EvJn4oLmGqNQ.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2xsBZTJ8WjEpM62TNTV9r6PpS4Tixp946ZL0R5wXa6Oz_PddaUvyAX6qDkICeYKPhiY100UD3-EvJn4oLmGqNQ.webp"; sourceTree = "<group>"; };
+		1F74A5BD2A80A03B005E07EA /* angry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = angry.jpg; sourceTree = "<group>"; };
+		1F74A5BF2A80B92D005E07EA /* doneSecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doneSecView.swift; sourceTree = "<group>"; };
 		1F7FFBF22A77BE0400863067 /* todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7FFBF52A77BE0400863067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7FFBF72A77BE0400863067 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		1F7FFBE92A77BE0400863067 = {
 			isa = PBXGroup;
 			children = (
-				1F2F30182A7C987900947DFF /* 123ViewController.swift */,
 				1F7FFBF42A77BE0400863067 /* todo */,
 				1F7FFBF32A77BE0400863067 /* Products */,
 			);
@@ -70,7 +70,7 @@
 		1F7FFBF42A77BE0400863067 /* todo */ = {
 			isa = PBXGroup;
 			children = (
-				1F5BE0972A78F02E00EA5EC1 /* 2xsBZTJ8WjEpM62TNTV9r6PpS4Tixp946ZL0R5wXa6Oz_PddaUvyAX6qDkICeYKPhiY100UD3-EvJn4oLmGqNQ.webp */,
+				1F74A5BD2A80A03B005E07EA /* angry.jpg */,
 				1F7FFC0D2A77F35C00863067 /* rip.png */,
 				1F7FFC0F2A77F36300863067 /* happymeta.png */,
 				1F7FFC0B2A77D75300863067 /* meta.jpeg */,
@@ -78,6 +78,7 @@
 				1F7FFBF72A77BE0400863067 /* SceneDelegate.swift */,
 				1F7FFBF92A77BE0400863067 /* ViewController.swift */,
 				1F7FFC112A77F62800863067 /* secView.swift */,
+				1F74A5BF2A80B92D005E07EA /* doneSecView.swift */,
 				1F7FFC132A77FE0C00863067 /* thirdView.swift */,
 				1F7FFBFB2A77BE0400863067 /* Main.storyboard */,
 				1F7FFBFE2A77BE0400863067 /* Assets.xcassets */,
@@ -145,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F74A5BE2A80A03B005E07EA /* angry.jpg in Resources */,
 				1F7FFC0C2A77D75400863067 /* meta.jpeg in Resources */,
 				1F7FFC022A77BE0400863067 /* LaunchScreen.storyboard in Resources */,
 				1F7FFBFF2A77BE0400863067 /* Assets.xcassets in Resources */,
@@ -162,10 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7FFC142A77FE0C00863067 /* thirdView.swift in Sources */,
-				1F2F30192A7C987900947DFF /* 123ViewController.swift in Sources */,
 				1F7FFBFA2A77BE0400863067 /* ViewController.swift in Sources */,
 				1F7FFBF62A77BE0400863067 /* AppDelegate.swift in Sources */,
 				1F7FFC122A77F62800863067 /* secView.swift in Sources */,
+				1F74A5C02A80B92D005E07EA /* doneSecView.swift in Sources */,
 				1F7FFBF82A77BE0400863067 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
