@@ -132,15 +132,22 @@
                                     <constraint firstAttribute="height" constant="370" id="CS4-HC-b2G"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="myFirstCell" textLabel="GdL-G5-n2c" style="IBUITableViewCellStyleDefault" id="3XW-90-YTT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="myFirstCell" textLabel="GdL-G5-n2c" detailTextLabel="DBX-dn-2fh" style="IBUITableViewCellStyleValue1" id="3XW-90-YTT">
                                         <rect key="frame" x="0.0" y="50" width="295" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceLeftToRight" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3XW-90-YTT" id="cY3-cI-xQA">
-                                            <rect key="frame" x="0.0" y="0.0" width="295" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="hello chulwoo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GdL-G5-n2c">
-                                                    <rect key="frame" x="16" y="0.0" width="263" height="43.666667938232422"/>
+                                                    <rect key="frame" x="16" y="15" width="77.666666666666671" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DBX-dn-2fh">
+                                                    <rect key="frame" x="214.33333333333334" y="15" width="32.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -148,11 +155,8 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.64406457115473459" green="1" blue="0.56953039167747055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="OMV-7F-RFg" kind="show" identifier="dataGet" id="G3p-P5-jTL"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -209,7 +213,8 @@
                     <navigationItem key="navigationItem" title="- To Do List -" id="tci-Ts-JrX">
                         <barButtonItem key="rightBarButtonItem" image="person.fill.checkmark" catalog="system" id="PR3-9L-hEh">
                             <connections>
-                                <segue destination="OMV-7F-RFg" kind="show" id="BgR-P4-ppJ"/>
+                                <action selector="goToDoneButton:" destination="mdp-Ao-Ur0" id="xfA-aO-U9V"/>
+                                <segue destination="OMV-7F-RFg" kind="show" identifier="showDeleted" id="GwT-4o-BTY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -332,9 +337,6 @@
             <point key="canvasLocation" x="2643.5114503816794" y="-1013.3802816901409"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="G3p-P5-jTL"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="arrowshape.forward" catalog="system" width="128" height="104"/>

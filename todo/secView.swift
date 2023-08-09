@@ -7,18 +7,14 @@
 
 import UIKit
 
-protocol DoneSecViewDelegate: AnyObject {
-    func addDoneName(_ name: String)
-    func getDoneNames() -> [String]
+
+protocol SendingData: AnyObject {
+    func deletedNamesUpdated(_ names: [String])
 }
-
-
-
 class secView: UIViewController {
     
+    weak var sendingData: SendingData? // 프로토콜 객체 <---이새끼를 써야함
     
-    // 델리게이트 프로퍼티 추가
-    weak var delegate: DoneSecViewDelegate?
     
     var names : [String] = []  //<-model
     var deletedNames : [String] = []
@@ -30,8 +26,16 @@ class secView: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     
-    @IBAction func goToDoneButton(_ sender: UIBarButtonItem) {
+    
+    
+    @IBAction func goToDoneButton(_ sender: Any) {performSegue(withIdentifier: "showDeleted", sender: self)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDeleted", let destinationVC = segue.destination as? doneSecView {
+            destinationVC.deletedNames = deletedNames
+        }
+    }
+    
     
     
     ///텍스트필드에 작성후 버튼을 눌르면 테이블뷰 셀에 적용됨
@@ -81,17 +85,17 @@ class secView: UIViewController {
     }
     
     
-       func saveNames() {
-                UserDefaults.standard.set(names, forKey: "names") //<-- 유저디폴트 = 데이터저장소중에 하나 영구적 저장이 가능하며 간단한 데이터값들을 저장하기에 좋은 방법
-            }
-   
-    func loadNames() {
-            if let savedNames = UserDefaults.standard.array(forKey: "names") as? [String] {
-                    names = savedNames // 불러온 배열이 nil이 아니라면 (데이터가 존재한다면)
-                      tableView.reloadData() // names 배열에 불러온 배열을 대입하고 테이블 뷰를 다시 로드하여 데이터를 반영
-                  }
-         }
+    func saveNames() {
+        UserDefaults.standard.set(names, forKey: "names") //<-- 유저디폴트 = 데이터저장소중에 하나 영구적 저장이 가능하며 간단한 데이터값들을 저장하기에 좋은 방법
     }
+    
+    func loadNames() {
+        if let savedNames = UserDefaults.standard.array(forKey: "names") as? [String] {
+            names = savedNames // 불러온 배열이 nil이 아니라면 (데이터가 존재한다면)
+            tableView.reloadData() // names 배열에 불러온 배열을 대입하고 테이블 뷰를 다시 로드하여 데이터를 반영
+        }
+    }
+}
 
 extension secView /*여기 파일이 secView 이고 class secView라서*/: UITableViewDelegate, UITableViewDataSource {
     
@@ -133,10 +137,14 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
     //    }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "delete") { (action, sourceView, completionHandler) in
+            self.deletedNames.append(self.names[indexPath.row])
             self.names.remove(at: indexPath.row) // 데이터 배열에서 해당 인덱스의 데이터를 삭제
             tableView.reloadData() // 테이블 뷰를 리로드하여 삭제된 데이터를 반영해주기
             self.saveNames()
+            self.sendingData?.deletedNamesUpdated(self.deletedNames) // 델리게이트를 통해 삭제된 데이터 전달
             completionHandler(true) // 삭제기능
+            print(self.deletedNames)
+            
         }
         deleteAction.backgroundColor = .red //배경색 넣어주기 스와이프 길이 조절해주려면 해야한다고함 이유는 솔직히 모름 뭔가 공식같은거같아서 그냥 공식같은거같은듯 ?
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])// 약간 공식같은듯
@@ -152,17 +160,14 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
             //알럿창에 텍스트필드 만들어보기
             alertForEdit.addTextField {
                 textField in textField.text = self.names[indexPath.row]
-                
                 //알럿창에 오케이버튼 기능
                 let alertOk = UIAlertAction(title: "OK", style: .default) { (textField) in
                     if let textField = alertForEdit.textFields?.first {
                         if let editTextField = textField.text {
                             //  입력한 내용을 가져와서 처리하는 로직을 추가해야함
                             print("입력한 내용: (editTextField)")
-                            
                             // 배열에 입력한 내용 추가
                             self.names[indexPath.row] = editTextField
-                            
                             // 테이블 뷰 새로 리로드 하기
                             tableView.reloadData()
                             self.saveNames()
@@ -171,44 +176,15 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
                     }
                 }
                 alertForEdit.addAction(alertOk)
-                
                 // 4. 취소 버튼 추가
                 let alertCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                 alertForEdit.addAction(alertCancel)
             }
-            
             self.present(alertForEdit, animated: true, completion: nil)
         }
         editAction.backgroundColor = .systemBlue
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [editAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false
         return        swipeConfiguration
-     
-    }
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "dataGet" {
-            if let cell = sender as? UITableViewCell,
-               let indexPath = tableView.indexPath(for: cell) {
-                let selectedData = names[indexPath.row]
-                
-                if let destinationVC = segue.destination as? doneSecView {
-                    // 델리게이트를 설정하여 데이터 전달
-                    delegate = destinationVC as? any DoneSecViewDelegate
-                        
-                    self.delegate = destinationVC
-                    if let text = cell.textLabel?.text {
-                        delegate?.addDoneName(text)
-                    }
-                    names.remove(at: indexPath.row)
-                    tableView.reloadData()
-                    saveNames()
-                    print(names)
-                    
-                }
-            }
-        }
     }
 }
