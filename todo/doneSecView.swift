@@ -7,61 +7,55 @@
 
 import UIKit
 
-class doneSecView: UIViewController  {
+class doneSecView: UIViewController , SendingData {
     
+    func deletedNamesUpdated(_ names: [String]) {
+        deletedNames = names
+        print("\(deletedNames) 딜리트")
+        listFromSecViewTable.reloadData() // 삭제된 데이터를 테이블에 반영
+    }
     
-    var doneName : [String] = []
-    
-    //@IBOutlet weak var getDataFromSecView: UILabel!
+    var deletedNames: [String] = []
     
     @IBOutlet weak var listFromSecViewTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //view.backgroundColor = .red // 연동됬는지 확인용
+        
         listFromSecViewTable.delegate = self
         listFromSecViewTable.dataSource = self
-        saveDoneNames()
-        loadDoneNames()
+        saveDeletedNames()
+        loadDeletedNames()
+        listFromSecViewTable.reloadData()
         
     }
-    func saveDoneNames() {
-        UserDefaults.standard.set(doneName, forKey: "doneName") //<-- 유저디폴트 = 데이터저장소중에 하나 영구적 저장이 가능하며 간단한 데이터값들을 저장하기에 좋은 방법
+    
+    func saveDeletedNames() {
+        UserDefaults.standard.set(deletedNames, forKey: "deletedNames")
     }
-    func loadDoneNames() {
-        if let savedDoneNames = UserDefaults.standard.array(forKey: "doneName") as? [String] {
-            doneName = savedDoneNames // 불러온 배열이 nil이 아니라면 (데이터가 존재한다면)
+    func loadDeletedNames() {
+        if let savedDeletedNames = UserDefaults.standard.array(forKey: "deletedNames") as? [String] {
+            deletedNames = savedDeletedNames
+            listFromSecViewTable.reloadData()
             
         }
     }
 }
+    extension doneSecView : UITableViewDelegate, UITableViewDataSource {
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return deletedNames.count
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "getCellData", for: indexPath)
+            // cell에 필요한 데이터를 설정해주세요
+            cell.textLabel?.text = deletedNames[indexPath.row]
+            return cell
+        }
+    }
 
 
-extension doneSecView : UITableViewDelegate, UITableViewDataSource, DoneSecViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return doneName.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "getCellData", for: indexPath)
-        // cell에 필요한 데이터를 설정해주세요
-        cell.textLabel?.text = doneName[indexPath.row]
-                        
-        
-        
-        return cell
-    }
-    func getDoneNames() -> [String] {
-        return doneName
-    }
-    func addDoneName(_ name: String) {
-        doneName.append(name)
-        saveDoneNames()
-        loadDoneNames()
-        print(doneName)
-        
-        
-    }
-}
+
 
