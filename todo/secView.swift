@@ -7,12 +7,22 @@
 
 import UIKit
 
+protocol DoneSecViewDelegate: AnyObject {
+    func addDoneName(_ name: String)
+    func getDoneNames() -> [String]
+}
 
 
 
 class secView: UIViewController {
     
+    
+    // 델리게이트 프로퍼티 추가
+    weak var delegate: DoneSecViewDelegate?
+    
     var names : [String] = []  //<-model
+    var deletedNames : [String] = []
+    
     //  var editTextField : [String] = []
     //MVC view model controller
     
@@ -22,6 +32,8 @@ class secView: UIViewController {
     
     @IBAction func goToDoneButton(_ sender: UIBarButtonItem) {
     }
+    
+    
     ///텍스트필드에 작성후 버튼을 눌르면 테이블뷰 셀에 적용됨
     @IBAction func didTabButton(_ sender: UIButton) {
         func showImageForAWhile() {
@@ -38,6 +50,7 @@ class secView: UIViewController {
                 }
             }
         }
+        
         secImg.image = UIImage(named: "angry.jpg")
         names.append(nameTextField.text ?? "empty")//업데이트됬어
         print(names)
@@ -45,6 +58,8 @@ class secView: UIViewController {
         nameTextField.text = ""//<--이렇게해주면 버튼누르고 나서 텍스트필드 내용을 클리어 해줌
         saveNames() // <----이 버튼을 눌렀을때 names배열에 텍스트필드 입력값이 들어가고 저장이 되어야 어플에서 저장이 반영됨
         //secImg.image = UIImage(named: "angry.jpg")
+        
+        
     }
     
     @IBOutlet weak var secImg: UIImageView!
@@ -66,17 +81,17 @@ class secView: UIViewController {
     }
     
     
-    func saveNames() {
-        UserDefaults.standard.set(names, forKey: "names") //<-- 유저디폴트 = 데이터저장소중에 하나 영구적 저장이 가능하며 간단한 데이터값들을 저장하기에 좋은 방법
-    }
-    
+       func saveNames() {
+                UserDefaults.standard.set(names, forKey: "names") //<-- 유저디폴트 = 데이터저장소중에 하나 영구적 저장이 가능하며 간단한 데이터값들을 저장하기에 좋은 방법
+            }
+   
     func loadNames() {
-        if let savedNames = UserDefaults.standard.array(forKey: "names") as? [String] {
-            names = savedNames // 불러온 배열이 nil이 아니라면 (데이터가 존재한다면)
-            tableView.reloadData() // names 배열에 불러온 배열을 대입하고 테이블 뷰를 다시 로드하여 데이터를 반영
-        }
+            if let savedNames = UserDefaults.standard.array(forKey: "names") as? [String] {
+                    names = savedNames // 불러온 배열이 nil이 아니라면 (데이터가 존재한다면)
+                      tableView.reloadData() // names 배열에 불러온 배열을 대입하고 테이블 뷰를 다시 로드하여 데이터를 반영
+                  }
+         }
     }
-}
 
 extension secView /*여기 파일이 secView 이고 class secView라서*/: UITableViewDelegate, UITableViewDataSource {
     
@@ -168,8 +183,11 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [editAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false
         return        swipeConfiguration
-        //  return UISwipeActionsConfiguration(actions: [editAction])
+     
     }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dataGet" {
             if let cell = sender as? UITableViewCell,
@@ -177,16 +195,20 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
                 let selectedData = names[indexPath.row]
                 
                 if let destinationVC = segue.destination as? doneSecView {
-                    destinationVC.doneName = [selectedData] // 선택한 데이터를 doneName에 추가
+                    // 델리게이트를 설정하여 데이터 전달
+                    delegate = destinationVC as? any DoneSecViewDelegate
+                        
+                    self.delegate = destinationVC
+                    if let text = cell.textLabel?.text {
+                        delegate?.addDoneName(text)
+                    }
+                    names.remove(at: indexPath.row)
+                    tableView.reloadData()
+                    saveNames()
+                    print(names)
+                    
                 }
-                
-                names.remove(at: indexPath.row) // secView에서 선택한 데이터 삭제
-                tableView.reloadData() // 테이블 뷰 리로드하여 변경된 데이터 반영
-                saveNames() // 변경된 데이터 저장
-                
             }
         }
     }
 }
-
-
