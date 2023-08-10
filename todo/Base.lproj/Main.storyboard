@@ -125,37 +125,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bpS-NM-CUK">
-                                <rect key="frame" x="49" y="338" width="295" height="370"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="49" y="338" width="295" height="321"/>
+                                <color key="backgroundColor" red="0.68053318298969079" green="0.45305694948574232" blue="0.6201660144558907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="370" id="CS4-HC-b2G"/>
+                                    <constraint firstAttribute="height" constant="321" id="CS4-HC-b2G"/>
                                 </constraints>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" highlighted="YES" showsExpansionTextWhenTruncated="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="fdI-7n-dar">
+                                    <rect key="frame" x="0.0" y="121.66666793823242" width="295" height="306"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">+ ADD TO DO                     - L i s t -                 H E R E !                 Metamong                           is                 Ready !</string>
+                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" red="0.0" green="1" blue="0.92529529639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <size key="shadowOffset" width="5" height="-1"/>
+                                </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="myFirstCell" textLabel="GdL-G5-n2c" detailTextLabel="DBX-dn-2fh" style="IBUITableViewCellStyleValue1" id="3XW-90-YTT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="myFirstCell" textLabel="GdL-G5-n2c" style="IBUITableViewCellStyleDefault" id="3XW-90-YTT">
                                         <rect key="frame" x="0.0" y="50" width="295" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceLeftToRight" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3XW-90-YTT" id="cY3-cI-xQA">
-                                            <rect key="frame" x="0.0" y="0.0" width="255" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="295" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="hello chulwoo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GdL-G5-n2c">
-                                                    <rect key="frame" x="16" y="15" width="77.666666666666671" height="14.333333333333334"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="hello chulwoo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="GdL-G5-n2c">
+                                                    <rect key="frame" x="16" y="0.0" width="263" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DBX-dn-2fh">
-                                                    <rect key="frame" x="214.33333333333334" y="15" width="32.666666666666664" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="highlightedColor" red="1" green="0.85406406599999996" blue="0.91893397060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="shadowColor" red="0.0" green="1" blue="0.92529529639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <size key="shadowOffset" width="1" height="0.0"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.90588235859999999" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,8 +171,9 @@
                                     <constraint firstAttribute="height" constant="155" id="2D5-Xf-Fun"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘은 무엇을 해 볼 까 ?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-Fs-mkU">
-                                <rect key="frame" x="40" y="733" width="223" height="33"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" highlighted="YES" selected="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘은 무엇을 해 볼 까 ?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="always" id="PQc-Fs-mkU">
+                                <rect key="frame" x="40.000000000000014" y="733" width="221.33333333333337" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="jKN-OK-bF5"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="oq0-1W-0jA"/>
@@ -175,10 +181,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izD-nP-8ti">
-                                <rect key="frame" x="297" y="733" width="59" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="izD-nP-8ti">
+                                <rect key="frame" x="295.33333333333331" y="733" width="60.666666666666686" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ADD"/>
+                                <buttonConfiguration key="configuration" style="filled" title="ADD">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="didTabButton:" destination="mdp-Ao-Ur0" eventType="touchUpInside" id="c9T-89-AZp"/>
                                 </connections>
@@ -189,11 +198,18 @@
                                     <constraint firstAttribute="height" constant="155" id="HFx-si-IZj"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make Metamong Do Something" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEn-2n-YSu">
+                                <rect key="frame" x="71" y="686" width="251" height="23.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B1K-dl-zfg"/>
                         <color key="backgroundColor" red="1" green="0.66318583809999998" blue="0.89054381130000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bpS-NM-CUK" firstAttribute="top" secondItem="G6d-Mz-k0w" secondAttribute="bottom" constant="20" id="73O-ET-Z9a"/>
+                            <constraint firstItem="nEn-2n-YSu" firstAttribute="leading" secondItem="B1K-dl-zfg" secondAttribute="leading" constant="71" id="EFb-p5-ug1"/>
                             <constraint firstItem="izD-nP-8ti" firstAttribute="top" secondItem="PQc-Fs-mkU" secondAttribute="top" id="EoJ-hA-4iN"/>
                             <constraint firstItem="Li4-jz-IwG" firstAttribute="top" secondItem="G6d-Mz-k0w" secondAttribute="top" id="GtR-2n-ds0"/>
                             <constraint firstItem="B1K-dl-zfg" firstAttribute="trailing" secondItem="bpS-NM-CUK" secondAttribute="trailing" constant="49" id="I77-g9-y8a"/>
@@ -202,16 +218,18 @@
                             <constraint firstItem="B1K-dl-zfg" firstAttribute="trailing" secondItem="G6d-Mz-k0w" secondAttribute="trailing" constant="45" id="QzI-M8-JXh"/>
                             <constraint firstItem="bpS-NM-CUK" firstAttribute="leading" secondItem="B1K-dl-zfg" secondAttribute="leading" constant="49" id="SzE-cR-z05"/>
                             <constraint firstItem="B1K-dl-zfg" firstAttribute="trailing" secondItem="izD-nP-8ti" secondAttribute="trailing" constant="37" id="Xbr-Bc-QtW"/>
-                            <constraint firstItem="PQc-Fs-mkU" firstAttribute="top" secondItem="bpS-NM-CUK" secondAttribute="bottom" constant="25" id="ZHr-rU-H4g"/>
+                            <constraint firstItem="PQc-Fs-mkU" firstAttribute="top" secondItem="bpS-NM-CUK" secondAttribute="bottom" constant="74" id="ZHr-rU-H4g"/>
+                            <constraint firstItem="PQc-Fs-mkU" firstAttribute="top" secondItem="nEn-2n-YSu" secondAttribute="bottom" constant="23.666666666666629" id="edX-cX-Hte"/>
                             <constraint firstItem="G6d-Mz-k0w" firstAttribute="leading" secondItem="B1K-dl-zfg" secondAttribute="leading" constant="45" id="h2k-cC-DmZ"/>
                             <constraint firstItem="izD-nP-8ti" firstAttribute="centerY" secondItem="PQc-Fs-mkU" secondAttribute="centerY" id="qkV-B2-5hX"/>
                             <constraint firstItem="PQc-Fs-mkU" firstAttribute="leading" secondItem="B1K-dl-zfg" secondAttribute="leading" constant="40" id="sHG-Cy-c3x"/>
+                            <constraint firstItem="nEn-2n-YSu" firstAttribute="centerX" secondItem="bpS-NM-CUK" secondAttribute="centerX" id="u8D-Jd-fxn"/>
                             <constraint firstItem="izD-nP-8ti" firstAttribute="leading" secondItem="PQc-Fs-mkU" secondAttribute="trailing" constant="34" id="z0d-9K-lUT"/>
                             <constraint firstItem="G6d-Mz-k0w" firstAttribute="top" secondItem="B1K-dl-zfg" secondAttribute="top" constant="60" id="zfG-Ws-I52"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="- To Do List -" id="tci-Ts-JrX">
-                        <barButtonItem key="rightBarButtonItem" image="person.fill.checkmark" catalog="system" id="PR3-9L-hEh">
+                        <barButtonItem key="rightBarButtonItem" image="checklist.rtl" catalog="system" id="PR3-9L-hEh">
                             <connections>
                                 <action selector="goToDoneButton:" destination="mdp-Ao-Ur0" id="xfA-aO-U9V"/>
                                 <segue destination="OMV-7F-RFg" kind="show" identifier="showDeleted" id="GwT-4o-BTY"/>
@@ -340,7 +358,7 @@
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="arrowshape.forward" catalog="system" width="128" height="104"/>
-        <image name="person.fill.checkmark" catalog="system" width="128" height="89"/>
+        <image name="checklist.rtl" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

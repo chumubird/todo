@@ -33,6 +33,7 @@ class secView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDeleted", let destinationVC = segue.destination as? doneSecView {
             destinationVC.deletedNames = deletedNames
+            print("던 투두 리스트 페이지로 가볼까 !")
         }
     }
     
@@ -107,6 +108,7 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myFirstCell", for: indexPath)//인덱스 패스
         cell.textLabel?.text = names[indexPath.row]
+        print("\(names) 투두 리스트 현황")
         
         
         // indexPath.section // 인덱스 패스란몇번째 섹션에 몇번째 로우 라는 뜻을 갖음
@@ -121,10 +123,10 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            print("0입니다")
+            //print("0입니다")
             tableView.deselectRow(at: indexPath, animated: true)
         } else {
-            print(indexPath.row)
+            //print(indexPath.row)
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
@@ -136,20 +138,34 @@ extension secView /*여기 파일이 secView 이고 class secView라서*/: UITab
     //        }
     //    }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "delete") { (action, sourceView, completionHandler) in
+        let doneAction = UIContextualAction(style: .destructive, title: "DONE") { (action, sourceView, completionHandler) in
             self.deletedNames.append(self.names[indexPath.row])
             self.names.remove(at: indexPath.row) // 데이터 배열에서 해당 인덱스의 데이터를 삭제
             tableView.reloadData() // 테이블 뷰를 리로드하여 삭제된 데이터를 반영해주기
             self.saveNames()
             self.sendingData?.deletedNamesUpdated(self.deletedNames) // 델리게이트를 통해 삭제된 데이터 전달
             completionHandler(true) // 삭제기능
-            print(self.deletedNames)
+            print("\(self.deletedNames) 던 투두 리스트 현황")
             
         }
-        deleteAction.backgroundColor = .red //배경색 넣어주기 스와이프 길이 조절해주려면 해야한다고함 이유는 솔직히 모름 뭔가 공식같은거같아서 그냥 공식같은거같은듯 ?
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])// 약간 공식같은듯
+        doneAction.backgroundColor = .systemMint //배경색 넣어주기 스와이프 길이 조절해주려면 해야한다고함 이유는 솔직히 모름 뭔가 공식같은거같아서 그냥 공식같은거같은듯 ?
+//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [doneAction])// 약간 공식같은듯
+//        swipeConfiguration.performsFirstActionWithFullSwipe = false // 폴스로 해야됨
+        
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "DELETE") { (action, sourceView, completionHandler) in
+            self.names.remove(at: indexPath.row)
+            tableView.reloadData()
+            self.saveNames()
+            completionHandler(true)
+//            print("\(self.names.remove(at: indexPath.row))가 투두 리스트에서 삭제됨 !") <==== 오류가남;;
+            
+        }
+        deleteAction.backgroundColor = .systemRed //배경색 넣어주기 스와이프 길이 조절해주려면 해야한다고함 이유는 솔직히 모름 뭔가 공식같은거같아서 그냥 공식같은거같은듯 ?
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction,doneAction])// 약간 공식같은듯
         swipeConfiguration.performsFirstActionWithFullSwipe = false // 폴스로 해야됨
         return  swipeConfiguration
+        
         //  return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

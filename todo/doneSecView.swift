@@ -46,12 +46,14 @@ class doneSecView: UIViewController , SendingData {
     extension doneSecView : UITableViewDelegate, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           
             return deletedNames.count
         }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "getCellData", for: indexPath)
             // cell에 필요한 데이터를 설정해주세요
             cell.textLabel?.text = deletedNames[indexPath.row]
+            
             return cell
         }
     }
