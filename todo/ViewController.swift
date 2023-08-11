@@ -8,7 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //var names : [String] = []
+    
+    
     
     @IBOutlet weak var imgView: UIImageView! //이미지뷰는 변수 처리
     

@@ -7,7 +7,9 @@
 
 import UIKit
 
+
 class doneSecView: UIViewController , SendingData {
+    
     
     func deletedNamesUpdated(_ names: [String]) {
         deletedNames = names
@@ -16,6 +18,18 @@ class doneSecView: UIViewController , SendingData {
     }
     
     var deletedNames: [String] = []
+    
+
+    
+    
+    @IBAction func deleteDoneList(_ sender: UIBarButtonItem) {
+        print("모든 던 리스트를 삭제함!")
+        print(deletedNames)
+        deletedNames.removeAll()
+        saveDeletedNames()
+        listFromSecViewTable.reloadData()
+    }
+    
     
     @IBOutlet weak var listFromSecViewTable: UITableView!
     
@@ -28,7 +42,7 @@ class doneSecView: UIViewController , SendingData {
         listFromSecViewTable.dataSource = self
         saveDeletedNames()
         loadDeletedNames()
-        listFromSecViewTable.reloadData()
+       // listFromSecViewTable.reloadData()
         
     }
     
@@ -43,20 +57,20 @@ class doneSecView: UIViewController , SendingData {
         }
     }
 }
-    extension doneSecView : UITableViewDelegate, UITableViewDataSource {
+extension doneSecView : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           
-            return deletedNames.count
-        }
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "getCellData", for: indexPath)
-            // cell에 필요한 데이터를 설정해주세요
-            cell.textLabel?.text = deletedNames[indexPath.row]
-            
-            return cell
-        }
+        return deletedNames.count
     }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "getCellData", for: indexPath)
+        // cell에 필요한 데이터를 설정해주세요
+        cell.textLabel?.text = deletedNames[indexPath.row]
+        
+        return cell
+    }
+}
 
 
 
