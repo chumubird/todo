@@ -256,9 +256,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2vX-nf-DxV">
-                                <rect key="frame" x="55" y="200" width="270" height="346"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="응 안해~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb6-35-1eO">
                                 <rect key="frame" x="104" y="602" width="185" height="114"/>
                                 <constraints>
@@ -274,18 +271,10 @@
                         <constraints>
                             <constraint firstItem="pFh-XE-ck7" firstAttribute="bottom" secondItem="mb6-35-1eO" secondAttribute="bottom" constant="102" id="2I6-rn-PSY"/>
                             <constraint firstItem="mb6-35-1eO" firstAttribute="leading" secondItem="pFh-XE-ck7" secondAttribute="leading" constant="104" id="6Fq-Xy-lrl"/>
-                            <constraint firstItem="2vX-nf-DxV" firstAttribute="top" secondItem="pFh-XE-ck7" secondAttribute="top" constant="97" id="JWn-Ll-XQg"/>
-                            <constraint firstItem="mb6-35-1eO" firstAttribute="top" secondItem="2vX-nf-DxV" secondAttribute="bottom" constant="56" id="ZHp-bj-ga7"/>
                             <constraint firstItem="mb6-35-1eO" firstAttribute="centerX" secondItem="pw2-g4-6lL" secondAttribute="centerX" id="Zkg-uc-uws"/>
-                            <constraint firstItem="2vX-nf-DxV" firstAttribute="leading" secondItem="pFh-XE-ck7" secondAttribute="leading" constant="55" id="uPn-3P-Nbs"/>
-                            <constraint firstItem="pFh-XE-ck7" firstAttribute="trailing" secondItem="2vX-nf-DxV" secondAttribute="trailing" constant="68" id="xLh-7H-4Ih"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vwg-eh-dKv"/>
-                    <connections>
-                        <outlet property="thirdImg" destination="2vX-nf-DxV" id="qWx-Jp-Oa7"/>
-                        <outlet property="view" destination="2vX-nf-DxV" id="eH5-3Z-XXM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYQ-ph-JhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,10 +7,12 @@
 
 import UIKit
 
-class thirdView: UIViewController {
+class ThirdView: UIViewController {
 
     
+    
     @IBOutlet weak var thirdImg: UIImageView!
+    
     
     
     
@@ -26,3 +28,4 @@ class thirdView: UIViewController {
 
 
 }
+

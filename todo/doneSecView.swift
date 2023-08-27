@@ -8,14 +8,14 @@
 import UIKit
 
 
-class doneSecView: UIViewController , SendingData {
+class doneSecView: UIViewController  /*, SendingData*/ {
     
     
-    func deletedNamesUpdated(_ names: [String]) {
-        deletedNames = names
-        print("\(deletedNames) 딜리트")
-        listFromSecViewTable.reloadData() // 삭제된 데이터를 테이블에 반영
-    }
+//    func deletedNamesUpdated(_ names: [String]) {
+//        deletedNames = names
+//        print("\(deletedNames) 딜리트")
+//        listFromSecViewTable.reloadData() // 삭제된 데이터를 테이블에 반영
+//    }
     
     var deletedNames: [String] = []
     
@@ -23,11 +23,13 @@ class doneSecView: UIViewController , SendingData {
     
     
     @IBAction func deleteDoneList(_ sender: UIBarButtonItem) {
-        print("모든 던 리스트를 삭제함!")
-        print(deletedNames)
+        
+        print("지금 던 리스트 목록 \(deletedNames) -> 모든 던 리스트를 삭제하겠습니다!")
         deletedNames.removeAll()
-        saveDeletedNames()
         listFromSecViewTable.reloadData()
+        saveDeletedNames()
+        print("던 리스트 목록이 완전히 비워졌습니다.")
+        print("삭제된 후 , 던 리스트 현황 - >\(deletedNames)")
     }
     
     
@@ -38,13 +40,18 @@ class doneSecView: UIViewController , SendingData {
         
         //view.backgroundColor = .red // 연동됬는지 확인용
         
+        
+        print("던 투두 리스트 페이지 현황\(deletedNames)")
         listFromSecViewTable.delegate = self
         listFromSecViewTable.dataSource = self
-        saveDeletedNames()
-        loadDeletedNames()
-       // listFromSecViewTable.reloadData()
+        listFromSecViewTable.reloadData()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        listFromSecViewTable.reloadData()
+        }
+    
+    
     
     func saveDeletedNames() {
         UserDefaults.standard.set(deletedNames, forKey: "deletedNames")
@@ -55,6 +62,10 @@ class doneSecView: UIViewController , SendingData {
             listFromSecViewTable.reloadData()
             
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        //loadDeletedNames()
+        listFromSecViewTable.reloadData()
     }
 }
 extension doneSecView : UITableViewDelegate, UITableViewDataSource {
