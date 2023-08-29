@@ -11,9 +11,8 @@ class ThirdView: UIViewController {
 
     
     
-    @IBOutlet weak var thirdImg: UIImageView!
     
-    
+    @IBOutlet weak var forFun: UIImageView!
     
     
     override func viewDidLoad() {
@@ -22,7 +21,7 @@ class ThirdView: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        thirdImg.image = UIImage(named: "rip.png")
+        forFun.image = UIImage(named: "rip.png")
     }
     
 

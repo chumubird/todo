@@ -8,21 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    //
-    //
-    //    func deletedNamesUpdated(_ names: [String]) {
-    //        if let savedDeletedNames = UserDefaults.standard.array(forKey: "deletedNames") as? [String] {
-    //            deletedNames = savedDeletedNames
-    //        }
-    //    }
-    //
-    
-    
-    
-    
+
     let animalImage = "https://spartacodingclub.kr/css/images/scc-og.jpg"
-    var deletedNames: [String] = []
+    var deletedTodo: [String] = []
     
     @IBOutlet weak var imgView: UIImageView! //이미지뷰는 변수 처리
     
@@ -81,23 +69,23 @@ class ViewController: UIViewController {
     
     
     /* url세션 관련 공부한거 시도해보기*/
-    func getUrlData(){
-        if let url = URL(string: animalImage) {//옵셔널 바인딩 닐이 아닐때
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                if let JSONdata = data {
-                    let JSONdataString = String(data: JSONdata, encoding: .utf8)
-                    //print(JSONdata, response!)
-                    print(JSONdataString!)
-                }
-            }
-            task.resume()
-        }
-        
-    }
+//    func getUrlData(){
+//        if let url = URL(string: animalImage) {//옵셔널 바인딩 닐이 아닐때
+//            let session = URLSession(configuration: .default)
+//            let task = session.dataTask(with: url) { data, response, error in
+//                if error != nil {
+//                    print(error!)
+//                    return
+//                }
+//                if let JSONdata = data {
+//                    let JSONdataString = String(data: JSONdata, encoding: .utf8)
+//                    //print(JSONdata, response!)
+//                    print(JSONdataString!)
+//                }
+//            }
+//            task.resume()
+//        }
+//
+//    }
 }
 
