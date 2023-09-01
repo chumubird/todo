@@ -25,7 +25,7 @@ class secView: UIViewController {
     
     @IBOutlet weak var showPicker: UITextField!
     
-    var pickerList : [String] = ["혼자 할 일" , "같이 할 일"]
+    var pickerList : [String] = ["-------" ,"혼자 할 일" , "같이 할 일"]
     @objc func action() {
            showPicker.resignFirstResponder() // 피커뷰 닫기
        }
@@ -43,22 +43,34 @@ class secView: UIViewController {
     
    
     @IBAction func didTabButton(_ sender: UIButton) {
-        func showImageForAWhile() {
-            if self.secImg.isHidden == false {
-                self.secImg.isHidden = true
-                self .hiddenImg.image = UIImage(named: "pikachu.jpg")
-                if self .hiddenImg.isHidden == false {
-                }
-            }
-        }
         
-        secImg.image = UIImage(named: "pikachu.jpg")
+        
+        
         
         if showPicker.text == "혼자 할 일" {
                     todoForAlone.append(nameTextField.text ?? "empty")
+            secImg.image = UIImage(named: "pikachu.jpg")
+            func showImageForAWhile() {
+                if self.secImg.isHidden == false {
+                    self.secImg.isHidden = true
+                    self .hiddenImg.image = UIImage(named: "pikachu.jpg")
+                    if self .hiddenImg.isHidden == false {
+                    }
+                }
+            }
                 }
         else if showPicker.text == "같이 할 일" {
             todoForTogether.append(nameTextField.text ?? "empty")
+            secImg.image = UIImage(named: "realswift.jpg")
+
+            func showImageForAWhile() {
+                if self.secImg.isHidden == false {
+                    self.secImg.isHidden = true
+                    self .hiddenImg.image = UIImage(named: "realswift.jpg")
+                    if self .hiddenImg.isHidden == false {
+                    }
+                }
+            }
                 }
         
         tableView.reloadData()

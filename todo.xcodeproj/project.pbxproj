@@ -21,6 +21,7 @@
 		1F7FFC102A77F36300863067 /* happymeta.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F7FFC0F2A77F36300863067 /* happymeta.png */; };
 		1F7FFC122A77F62800863067 /* secView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FFC112A77F62800863067 /* secView.swift */; };
 		1F7FFC142A77FE0C00863067 /* thirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FFC132A77FE0C00863067 /* thirdView.swift */; };
+		1FA8B7DE2AA19CE100BC0080 /* realswift.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8B7DD2AA19CE100BC0080 /* realswift.jpg */; };
 		1FDBFEBD2A9E7FD300625B1C /* pikachu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FDBFEBC2A9E7FD300625B1C /* pikachu.jpg */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		1F7FFC0F2A77F36300863067 /* happymeta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happymeta.png; sourceTree = "<group>"; };
 		1F7FFC112A77F62800863067 /* secView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secView.swift; sourceTree = "<group>"; };
 		1F7FFC132A77FE0C00863067 /* thirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdView.swift; sourceTree = "<group>"; };
+		1FA8B7DD2AA19CE100BC0080 /* realswift.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = realswift.jpg; sourceTree = "<group>"; };
 		1FDBFEBC2A9E7FD300625B1C /* pikachu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pikachu.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				1F7FFC0F2A77F36300863067 /* happymeta.png */,
 				1FDBFEBC2A9E7FD300625B1C /* pikachu.jpg */,
 				1F7FFC0B2A77D75300863067 /* meta.jpeg */,
+				1FA8B7DD2AA19CE100BC0080 /* realswift.jpg */,
 				1F7E057B2A9C03910066ABC0 /* launchScreen.png */,
 				1F7FFBF52A77BE0400863067 /* AppDelegate.swift */,
 				1F7FFBF72A77BE0400863067 /* SceneDelegate.swift */,
@@ -158,6 +161,7 @@
 				1F7FFC022A77BE0400863067 /* LaunchScreen.storyboard in Resources */,
 				1F7E057C2A9C03910066ABC0 /* launchScreen.png in Resources */,
 				1F7FFBFF2A77BE0400863067 /* Assets.xcassets in Resources */,
+				1FA8B7DE2AA19CE100BC0080 /* realswift.jpg in Resources */,
 				1F7FFC102A77F36300863067 /* happymeta.png in Resources */,
 				1F7FFC0E2A77F35C00863067 /* rip.png in Resources */,
 				1F7FFBFD2A77BE0400863067 /* Main.storyboard in Resources */,
