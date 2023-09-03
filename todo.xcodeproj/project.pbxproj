@@ -22,9 +22,9 @@
 		1F7FFC122A77F62800863067 /* secView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FFC112A77F62800863067 /* secView.swift */; };
 		1F7FFC142A77FE0C00863067 /* thirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FFC132A77FE0C00863067 /* thirdView.swift */; };
 		1FA8B7DE2AA19CE100BC0080 /* realswift.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8B7DD2AA19CE100BC0080 /* realswift.jpg */; };
-		1FA8B7ED2AA21EAD00BC0080 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7EC2AA21EAD00BC0080 /* ToDoModel.swift */; };
-		1FA8B7EF2AA22B2200BC0080 /* UserDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7EE2AA22B2200BC0080 /* UserDefaultModel.swift */; };
 		1FA8B7F12AA22BD800BC0080 /* PickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7F02AA22BD800BC0080 /* PickerModel.swift */; };
+		1FA8B7F32AA53E9F00BC0080 /* UserDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7F22AA53E9F00BC0080 /* UserDefaultModel.swift */; };
+		1FA8B7F52AA53EB000BC0080 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7F42AA53EB000BC0080 /* ToDoModel.swift */; };
 		1FDBFEBD2A9E7FD300625B1C /* pikachu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FDBFEBC2A9E7FD300625B1C /* pikachu.jpg */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +46,9 @@
 		1F7FFC112A77F62800863067 /* secView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secView.swift; sourceTree = "<group>"; };
 		1F7FFC132A77FE0C00863067 /* thirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdView.swift; sourceTree = "<group>"; };
 		1FA8B7DD2AA19CE100BC0080 /* realswift.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = realswift.jpg; sourceTree = "<group>"; };
-		1FA8B7EC2AA21EAD00BC0080 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
-		1FA8B7EE2AA22B2200BC0080 /* UserDefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultModel.swift; sourceTree = "<group>"; };
 		1FA8B7F02AA22BD800BC0080 /* PickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModel.swift; sourceTree = "<group>"; };
+		1FA8B7F22AA53E9F00BC0080 /* UserDefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultModel.swift; sourceTree = "<group>"; };
+		1FA8B7F42AA53EB000BC0080 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
 		1FDBFEBC2A9E7FD300625B1C /* pikachu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pikachu.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,9 +111,9 @@
 		1FA8B7E02AA218D800BC0080 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				1FA8B7EC2AA21EAD00BC0080 /* ToDoModel.swift */,
-				1FA8B7EE2AA22B2200BC0080 /* UserDefaultModel.swift */,
 				1FA8B7F02AA22BD800BC0080 /* PickerModel.swift */,
+				1FA8B7F22AA53E9F00BC0080 /* UserDefaultModel.swift */,
+				1FA8B7F42AA53EB000BC0080 /* ToDoModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -227,12 +227,12 @@
 				1F7FFC142A77FE0C00863067 /* thirdView.swift in Sources */,
 				1F7FFBFA2A77BE0400863067 /* ViewController.swift in Sources */,
 				1F7FFBF62A77BE0400863067 /* AppDelegate.swift in Sources */,
-				1FA8B7EF2AA22B2200BC0080 /* UserDefaultModel.swift in Sources */,
+				1FA8B7F32AA53E9F00BC0080 /* UserDefaultModel.swift in Sources */,
 				1F7FFC122A77F62800863067 /* secView.swift in Sources */,
 				1F74A5C02A80B92D005E07EA /* doneSecView.swift in Sources */,
 				1F7FFBF82A77BE0400863067 /* SceneDelegate.swift in Sources */,
 				1FA8B7F12AA22BD800BC0080 /* PickerModel.swift in Sources */,
-				1FA8B7ED2AA21EAD00BC0080 /* ToDoModel.swift in Sources */,
+				1FA8B7F52AA53EB000BC0080 /* ToDoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
