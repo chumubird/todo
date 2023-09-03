@@ -9,10 +9,7 @@ import UIKit
 
 
 class secView: UIViewController  {
-  
-    
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var showPicker: UITextField!
