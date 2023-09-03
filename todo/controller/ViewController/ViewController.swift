@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let animalImage = "https://spartacodingclub.kr/css/images/scc-og.jpg"
-    var deletedTodo: [String] = []
+
     
     @IBOutlet weak var imgView: UIImageView! //이미지뷰는 변수 처리
     
@@ -64,10 +64,6 @@ class ViewController: UIViewController {
             task.resume()
         }
     }
-    
-    
-    
-    
     /* url세션 관련 공부한거 시도해보기*/
 //    func getUrlData(){
 //        if let url = URL(string: animalImage) {//옵셔널 바인딩 닐이 아닐때

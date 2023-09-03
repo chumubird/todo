@@ -8,22 +8,19 @@
 import UIKit
 
 
+
 class doneSecView: UIViewController  /*, SendingData*/ {
     
- 
-    var deletedTodo: [String] = []
-    
-
-    
+//    var deletedTodo: [String] = []
     
     @IBAction func deleteDoneList(_ sender: UIBarButtonItem) {
         
-        print("지금 던 리스트 목록 \(deletedTodo) -> 모든 던 리스트를 삭제하겠습니다!")
-        deletedTodo.removeAll()
+        print("지금 던 리스트 목록 \(ToDoModel.shareToDoModel.deletedTodo) -> 모든 던 리스트를 삭제하겠습니다!")
+        ToDoModel.shareToDoModel.deletedTodo.removeAll()
         listFromSecViewTable.reloadData()
-        saveDeletedTodo()
+        UserDefaultModel.userDefaultFunc.saveDeletedTodo()
         print("던 리스트 목록이 완전히 비워졌습니다.")
-        print("삭제된 후 , 던 리스트 현황 - >\(deletedTodo)")
+        print("삭제된 후 , 던 리스트 현황 - >\(ToDoModel.shareToDoModel.deletedTodo)")
     }
     
     
@@ -35,7 +32,7 @@ class doneSecView: UIViewController  /*, SendingData*/ {
         //view.backgroundColor = .red // 연동됬는지 확인용
         
         
-        print("던 투두 리스트 페이지 현황\(deletedTodo)")
+        print("던 투두 리스트 페이지 현황\(ToDoModel.shareToDoModel.deletedTodo)")
         
         listFromSecViewTable.delegate = self
         listFromSecViewTable.dataSource = self
@@ -44,19 +41,19 @@ class doneSecView: UIViewController  /*, SendingData*/ {
         
     }
     override func viewWillDisappear(_ animated: Bool) {
-        saveDeletedTodo()
+        UserDefaultModel.userDefaultFunc.saveDeletedTodo()
     }
-
-    func saveDeletedTodo() {
-        UserDefaults.standard.set(deletedTodo, forKey: "deletedTodo")
-    }
-    func loadDeletedTodo() {
-        if let savedDeletedTodo = UserDefaults.standard.array(forKey: "deletedTodo") as? [String] {
-            deletedTodo = savedDeletedTodo
+//
+//    func saveDeletedTodo() {
+//        UserDefaults.standard.set(ToDoModel.shareToDoModel.deletedTodo, forKey: "deletedTodo")
+//    }
+//    func loadDeletedTodo() {
+//        if let savedDeletedTodo = UserDefaults.standard.array(forKey: "deletedTodo") as? [String] {
+//            ToDoModel.shareToDoModel.deletedTodo = savedDeletedTodo
 //            listFromSecViewTable.reloadData()
-            
-        }
-    }
+//
+//        }
+//    }
 
 }
 extension doneSecView : UITableViewDelegate, UITableViewDataSource {
@@ -65,12 +62,12 @@ extension doneSecView : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return deletedTodo.count
+        return ToDoModel.shareToDoModel.deletedTodo.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "getCellData", for: indexPath)
         // cell에 필요한 데이터를 설정해주세요
-        cell.textLabel?.text = deletedTodo[indexPath.row]
+        cell.textLabel?.text = ToDoModel.shareToDoModel.deletedTodo[indexPath.row]
         
         return cell
     }
