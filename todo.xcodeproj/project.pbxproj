@@ -25,6 +25,8 @@
 		1FA8B7F12AA22BD800BC0080 /* PickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7F02AA22BD800BC0080 /* PickerModel.swift */; };
 		1FA8B7F32AA53E9F00BC0080 /* UserDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7F22AA53E9F00BC0080 /* UserDefaultModel.swift */; };
 		1FA8B7F52AA53EB000BC0080 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8B7F42AA53EB000BC0080 /* ToDoModel.swift */; };
+		1FCB8F8E2AB1DAD80041D4A8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1FCB8F8D2AB1DAD80041D4A8 /* SnapKit */; };
+		1FCB8F902AB1DB2C0041D4A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB8F8F2AB1DB2C0041D4A8 /* ProfileViewController.swift */; };
 		1FDBFEBD2A9E7FD300625B1C /* pikachu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FDBFEBC2A9E7FD300625B1C /* pikachu.jpg */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,7 @@
 		1FA8B7F02AA22BD800BC0080 /* PickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModel.swift; sourceTree = "<group>"; };
 		1FA8B7F22AA53E9F00BC0080 /* UserDefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultModel.swift; sourceTree = "<group>"; };
 		1FA8B7F42AA53EB000BC0080 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		1FCB8F8F2AB1DB2C0041D4A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1FDBFEBC2A9E7FD300625B1C /* pikachu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pikachu.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCB8F8E2AB1DAD80041D4A8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 			children = (
 				1F7FFBF92A77BE0400863067 /* ViewController.swift */,
 				1F7FFC112A77F62800863067 /* secView.swift */,
+				1FCB8F8F2AB1DB2C0041D4A8 /* ProfileViewController.swift */,
 				1F74A5BF2A80B92D005E07EA /* doneSecView.swift */,
 				1F7FFC132A77FE0C00863067 /* thirdView.swift */,
 			);
@@ -162,6 +167,9 @@
 			dependencies = (
 			);
 			name = todo;
+			packageProductDependencies = (
+				1FCB8F8D2AB1DAD80041D4A8 /* SnapKit */,
+			);
 			productName = todo;
 			productReference = 1F7FFBF22A77BE0400863067 /* todo.app */;
 			productType = "com.apple.product-type.application";
@@ -190,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 1F7FFBE92A77BE0400863067;
+			packageReferences = (
+				1FCB8F8C2AB1DAD80041D4A8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1F7FFBF32A77BE0400863067 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,6 +237,7 @@
 			files = (
 				1F7FFC142A77FE0C00863067 /* thirdView.swift in Sources */,
 				1F7FFBFA2A77BE0400863067 /* ViewController.swift in Sources */,
+				1FCB8F902AB1DB2C0041D4A8 /* ProfileViewController.swift in Sources */,
 				1F7FFBF62A77BE0400863067 /* AppDelegate.swift in Sources */,
 				1FA8B7F32AA53E9F00BC0080 /* UserDefaultModel.swift in Sources */,
 				1F7FFC122A77F62800863067 /* secView.swift in Sources */,
@@ -448,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1FCB8F8C2AB1DAD80041D4A8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FCB8F8D2AB1DAD80041D4A8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FCB8F8C2AB1DAD80041D4A8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F7FFBEA2A77BE0400863067 /* Project object */;
 }
