@@ -9,6 +9,7 @@ import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
+    
     private let profileButton = {
         let button = UIButton()
         button.layer.cornerRadius = 10
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
         imgView.image = UIImage(named: "meta.jpeg")
         buttonLayout()
         click()
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
